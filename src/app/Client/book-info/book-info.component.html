@@ -1,0 +1,36 @@
+<div class="p-4">
+  <div *ngIf="book">
+
+    <img [src]="book.image" alt="{{ book.name }}" class="w-full rounded-lg h-48 object-cover mb-4">
+    <div class="text-2xl font-bold mb-2">{{ book.name }}</div>
+    <p class="text-gray-700 mb-1">{{ book.description }}</p>
+    <div class="text-sm text-gray-600 mb-1">Author: {{ book.author }}</div>
+    <div class="text-sm text-gray-600 ">Category: {{ book.category }}</div>
+
+    <button class="bg-green-500 px-4 py-2 rounded text-white hover:bg-green-600 mt-4 flex items-center" (click)="addToBasket()">
+      <svg xmlns="http://www.w3.org/2000/svg" class=" mr-2 w-6 h-6" viewBox="0 0 24 24" fill="rgba(255,255,255,1)"><path d="M4.00436 6.41686L0.761719 3.17422L2.17593 1.76001L5.41857 5.00265H20.6603C21.2126 5.00265 21.6603 5.45037 21.6603 6.00265C21.6603 6.09997 21.6461 6.19678 21.6182 6.29L19.2182 14.29C19.0913 14.713 18.7019 15.0027 18.2603 15.0027H6.00436V17.0027H17.0044V19.0027H5.00436C4.45207 19.0027 4.00436 18.5549 4.00436 18.0027V6.41686ZM6.00436 7.00265V13.0027H17.5163L19.3163 7.00265H6.00436ZM5.50436 23.0027C4.67593 23.0027 4.00436 22.3311 4.00436 21.5027C4.00436 20.6742 4.67593 20.0027 5.50436 20.0027C6.33279 20.0027 7.00436 20.6742 7.00436 21.5027C7.00436 22.3311 6.33279 23.0027 5.50436 23.0027ZM17.5044 23.0027C16.6759 23.0027 16.0044 22.3311 16.0044 21.5027C16.0044 20.6742 16.6759 20.0027 17.5044 20.0027C18.3328 20.0027 19.0044 20.6742 19.0044 21.5027C19.0044 22.3311 18.3328 23.0027 17.5044 23.0027Z"></path></svg>
+      Add to Basket
+    </button>
+
+    <button routerLink="/" class="bg-blue-500 px-4 py-2 rounded text-white hover:bg-blue-600 mt-4 flex items-center mb-10">
+      <svg class="mr-2 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,1)"><path d="M4 18H6V20H18V4H6V6H4V3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V18ZM6 11H13V13H6V16L1 12L6 8V11Z"></path></svg>
+      Back to dashboad
+    </button>
+
+  </div>
+
+  <hr class="border-[5px] rounded-lg">
+
+  <div class="mt-8">
+    <h2 class="text-xl font-semibold mb-4">Popular Books</h2>
+    <div class="flex flex-wrap gap-4">
+      <div *ngFor="let popularBook of popularBooks" class="bg-white shadow-md rounded-lg p-4 w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
+        <img [src]="popularBook.image" alt="{{ popularBook.name }}" class="w-full h-48 object-cover rounded-t-lg mb-4">
+        <div class="text-xl font-bold mb-2">{{ popularBook.name }}</div>
+        <p class="text-gray-700 mb-2">{{ popularBook.description }}</p>
+        <div class="text-sm text-gray-600 mb-1">Author: {{ popularBook.author }}</div>
+        <div class="text-sm text-gray-600">Category: {{ popularBook.category }}</div>
+      </div>
+    </div>
+  </div>
+</div>
