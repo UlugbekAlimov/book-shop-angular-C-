@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { BookDashboardComponent } from './components/book-dashboard/book-dashboard.component';
-import { BookInfoComponent } from './components/book-info/book-info.component';
-import { BasketComponent } from './components/basket/basket.component';
+import { BookDashboardComponent } from './Client/book-dashboard/book-dashboard.component';
+import { BookInfoComponent } from './Client/book-info/book-info.component';
+import { BasketComponent } from './Client/basket/basket.component';
 
 export const routes: Routes = [
   { path: '', component: BookDashboardComponent },

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasketService } from '../../service/basket.serivce';
-import { BasketItem } from '../../service/basket.serivce';
+import { BasketService } from '../service/basket.serivce';
+import { BasketItem } from '../service/basket.serivce';
 import { RouterModule } from '@angular/router';
-import { CustomModalComponent } from '../../layout/custom-modal/custom-modal.component';
+import { CustomModalComponent } from '../../shared/custom-modal/custom-modal.component';
 
 @Component({
   selector: 'app-basket',
   standalone: true,
-  imports: [CommonModule, RouterModule , CustomModalComponent],
+  imports: [CommonModule, RouterModule, CustomModalComponent],
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.scss'],
 })

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { Book } from '../../interface/book.interface';
+import { Book } from '../interface/book.interface';
 import { CommonModule } from '@angular/common';
-import { BasketService } from '../../service/basket.serivce';
+import { BasketService } from '../service/basket.serivce';
 
 @Component({
   selector: 'app-book-info',
@@ -21,9 +21,9 @@ export class BookInfoComponent implements OnInit {
       description: 'Description of Popular Book 1',
       author: 'Author 1',
       category: 'Category 1',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
     {
       id: '1',
@@ -32,9 +32,9 @@ export class BookInfoComponent implements OnInit {
       description: 'Description of Popular Book 2',
       author: 'Author 2',
       category: 'Category 2',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
   ];
 
@@ -60,9 +60,9 @@ export class BookInfoComponent implements OnInit {
       description: 'Detailed description of Book ' + id,
       author: 'Author ' + id,
       category: 'Category ' + id,
-      price : 1 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 1,
+      count: 1,
+      publisher: 'faridun',
     };
   }
 

@@ -8,7 +8,7 @@ export interface BasketItem {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BasketService {
   private basket: BasketItem[] = [];
@@ -16,7 +16,7 @@ export class BasketService {
   basket$ = this.basketSubject.asObservable();
 
   addToBasket(book: Book): void {
-    const existingItem = this.basket.find(item => item.book.id === book.id);
+    const existingItem = this.basket.find((item) => item.book.id === book.id);
     if (existingItem) {
       existingItem.quantity++;
     } else {
@@ -26,12 +26,12 @@ export class BasketService {
   }
 
   removeFromBasket(bookId: string): void {
-    this.basket = this.basket.filter(item => item.book.id !== bookId);
+    this.basket = this.basket.filter((item) => item.book.id !== bookId);
     this.basketSubject.next(this.basket);
   }
 
   updateQuantity(bookId: string, quantity: number): void {
-    const item = this.basket.find(item => item.book.id === bookId);
+    const item = this.basket.find((item) => item.book.id === bookId);
     if (item) {
       item.quantity = quantity;
       if (item.quantity <= 0) {

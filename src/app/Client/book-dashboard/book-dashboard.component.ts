@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../../interface/book.interface';
+import { Book } from '../interface/book.interface';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -19,9 +19,9 @@ export class BookDashboardComponent implements OnInit {
       description: 'Book 1',
       author: 'Author 1',
       category: 'Category 1',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
     {
       id: '2',
@@ -30,9 +30,9 @@ export class BookDashboardComponent implements OnInit {
       description: 'Book 1',
       author: 'Author 1',
       category: 'Category 1',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
     {
       id: '3',
@@ -41,9 +41,9 @@ export class BookDashboardComponent implements OnInit {
       description: 'Book 1',
       author: 'Author 1',
       category: 'Category 1',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
     {
       id: '4',
@@ -52,9 +52,9 @@ export class BookDashboardComponent implements OnInit {
       description: 'Book 1',
       author: 'Author 1',
       category: 'Category 1',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
     {
       id: '5',
@@ -63,9 +63,9 @@ export class BookDashboardComponent implements OnInit {
       description: 'Book 1',
       author: 'Author 1',
       category: 'Category 1',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
     {
       id: '6',
@@ -74,9 +74,9 @@ export class BookDashboardComponent implements OnInit {
       description: 'Book 1',
       author: 'Author 1',
       category: 'Category 1',
-      price : 100 ,
-      count : 1,
-      publisher : 'faridun'
+      price: 100,
+      count: 1,
+      publisher: 'faridun',
     },
   ];
 
