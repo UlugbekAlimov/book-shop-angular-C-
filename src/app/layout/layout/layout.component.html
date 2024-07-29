@@ -1,2 +1,10 @@
 <app-navbar *ngIf="showNavbar"></app-navbar>
-<router-outlet></router-outlet>
+<div class="flex">
+  <div class="p-2 m-2 ">
+    Toggle Sidebar
+    <app-sidebar *ngIf="showSidebar"></app-sidebar>
+  </div>
+  <div class="flex-1 ml-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
