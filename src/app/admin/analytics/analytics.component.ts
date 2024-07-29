@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Book } from '../../Client/interface/book.interface';
 import { CommonModule } from '@angular/common';
+import { CountUpDirective } from '../../shared/count.directive';
 
 @Component({
   selector: 'app-analytics',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule , CountUpDirective],
   templateUrl: './analytics.component.html',
-  styleUrl: './analytics.component.scss'
+  styleUrl: './analytics.component.scss',
 })
 export class AnalyticsComponent {
   totalBooks: number = 120;

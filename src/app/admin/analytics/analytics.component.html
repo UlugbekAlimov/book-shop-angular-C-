@@ -1,13 +1,13 @@
-<div class="p-6 bg-white rounded-lg shadow-md">
+<div class="p-6 bg-white rounded-lg shadow-md mx-auto container">
   <h2 class="text-2xl font-semibold mb-4">Аналитика Магазина Книг</h2>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 mb-6">
     <div class="bg-blue-100 p-4 rounded-lg">
       <h3 class="text-lg font-semibold">Общее количество книг</h3>
-      <p class="text-2xl">{{ totalBooks }}</p>
+      <p class="text-2xl" [appCountUp]="totalBooks">{{ totalBooks }}</p>
     </div>
     <div class="bg-green-100 p-4 rounded-lg">
       <h3 class="text-lg font-semibold">Количество проданных книг</h3>
-      <p class="text-2xl">{{ soldBooks }}</p>
+      <p class="text-2xl" [appCountUp]="soldBooks">{{ soldBooks }}</p>
     </div>
   </div>
 
@@ -24,7 +24,7 @@
       </div>
     </div>
     <ng-template #noBooks>
-      <p>Нет популярных книг</p>
+      <p>Error while downloading</p>
     </ng-template>
   </div>
 </div>
