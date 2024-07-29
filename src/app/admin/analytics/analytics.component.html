@@ -1,0 +1,30 @@
+<div class="p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-semibold mb-4">Аналитика Магазина Книг</h2>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 mb-6">
+    <div class="bg-blue-100 p-4 rounded-lg">
+      <h3 class="text-lg font-semibold">Общее количество книг</h3>
+      <p class="text-2xl">{{ totalBooks }}</p>
+    </div>
+    <div class="bg-green-100 p-4 rounded-lg">
+      <h3 class="text-lg font-semibold">Количество проданных книг</h3>
+      <p class="text-2xl">{{ soldBooks }}</p>
+    </div>
+  </div>
+
+  <div class="bg-yellow-100 p-4 rounded-lg">
+    <h3 class="text-lg font-semibold mb-4">Популярные книги</h3>
+    <div *ngIf="popularBooks.length > 0; else noBooks" class="space-y-4">
+      <div *ngFor="let book of popularBooks" class="flex items-center space-x-4">
+        <img [src]="book.image" alt="{{ book.name }}" class="w-24 h-24 object-cover rounded-lg">
+        <div>
+          <h4 class="text-lg font-semibold">{{ book.name }}</h4>
+          <p class="text-sm text-gray-600">{{ book.category }}</p>
+          <p class="text-sm text-gray-500">Автор: {{ book.author }}</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noBooks>
+      <p>Нет популярных книг</p>
+    </ng-template>
+  </div>
+</div>
