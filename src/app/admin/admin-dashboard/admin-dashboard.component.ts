@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../interface/book.interface';
+import { AdminDashboardBook } from '../admin-interface/dashboard.interface';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
   selector: 'app-book-dashboard',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './book-dashboard.component.html',
-  styleUrl: './book-dashboard.component.scss',
+  templateUrl: './admin-dashboard.component.html',
+  styleUrl: './admin-dashboard.component.scss',
 })
-export class BookDashboardComponent implements OnInit {
-  books: Book[] = [
+export class AdminDashboardComponent implements OnInit {
+  books: AdminDashboardBook[] = [
     {
       id: '1',
       image: 'https://via.placeholder.com/150',
@@ -22,7 +22,7 @@ export class BookDashboardComponent implements OnInit {
       price: 100,
       count: 1,
       publisher: 'faridun',
-      rating: 3.4
+      rating: 2.3
     },
     {
       id: '2',
@@ -34,8 +34,7 @@ export class BookDashboardComponent implements OnInit {
       price: 100,
       count: 1,
       publisher: 'faridun',
-      rating: 4.4
-
+      rating: 4
     },
     {
       id: '3',
@@ -47,8 +46,7 @@ export class BookDashboardComponent implements OnInit {
       price: 100,
       count: 1,
       publisher: 'faridun',
-      rating: 6.4
-
+      rating: 5
     },
     {
       id: '4',
@@ -60,7 +58,7 @@ export class BookDashboardComponent implements OnInit {
       price: 100,
       count: 1,
       publisher: 'faridun',
-      rating: 3.4
+      rating: 3
     },
     {
       id: '5',
@@ -72,7 +70,7 @@ export class BookDashboardComponent implements OnInit {
       price: 100,
       count: 1,
       publisher: 'faridun',
-      rating: 3.42
+      rating: 2
     },
     {
       id: '6',
@@ -84,16 +82,11 @@ export class BookDashboardComponent implements OnInit {
       price: 100,
       count: 1,
       publisher: 'faridun',
-      rating: 2.4
-
+      rating: 4.3
     },
   ];
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-
-  viewBookInfo(bookId: string): void {
-    this.router.navigate(['/book-info', bookId]);
-  }
 }

@@ -1,4 +1,4 @@
-export interface Book {
+export interface AdminDashboardBook {
   id: string;
   image: string;
   name: string;

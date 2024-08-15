@@ -9,7 +9,7 @@ import { BasketService } from '../service/basket.serivce';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './book-info.component.html',
-  styleUrl: './book-info.component.scss',
+  styleUrls: ['./book-info.component.scss'],
 })
 export class BookInfoComponent implements OnInit {
   book: Book | undefined;
@@ -23,10 +23,11 @@ export class BookInfoComponent implements OnInit {
       category: 'Category 1',
       price: 100,
       count: 1,
-      publisher: 'faridun',
+      publisher: 'Publisher 1',
+      rating: 4.5,
     },
     {
-      id: '1',
+      id: '2',
       image: 'https://via.placeholder.com/150',
       name: 'Popular Book 2',
       description: 'Description of Popular Book 2',
@@ -34,7 +35,8 @@ export class BookInfoComponent implements OnInit {
       category: 'Category 2',
       price: 100,
       count: 1,
-      publisher: 'faridun',
+      publisher: 'Publisher 2',
+      rating: 3.8,
     },
   ];
 
@@ -46,7 +48,6 @@ export class BookInfoComponent implements OnInit {
 
   ngOnInit(): void {
     const bookId = this.route.snapshot.paramMap.get('id');
-    console.log('Book ID:', bookId);
     if (bookId) {
       this.book = this.getBookById(bookId);
     }
@@ -60,9 +61,10 @@ export class BookInfoComponent implements OnInit {
       description: 'Detailed description of Book ' + id,
       author: 'Author ' + id,
       category: 'Category ' + id,
-      price: 1,
+      price: 100,
       count: 1,
-      publisher: 'faridun',
+      publisher: 'Publisher ' + id,
+      rating: 4.2,
     };
   }
 
@@ -70,6 +72,26 @@ export class BookInfoComponent implements OnInit {
     if (this.book) {
       this.basketService.addToBasket(this.book);
       this.router.navigate(['/basket']);
+    }
+  }
+
+  setRating(rating: number): void {
+    if (this.book) {
+      this.book.rating = rating;
+    }
+  }
+
+  starsArray(filled: boolean): number[] {
+    const totalStars = 5;
+    const rating = this.book?.rating || 0;
+    const filledStars = Math.floor(rating);
+    const halfStar = (rating % 1) >= 0.5;
+
+    if (filled) {
+      return Array(filledStars).fill(0).map((_, i) => i + 1);
+    } else {
+      const total = halfStar ? totalStars - filledStars - 1 : totalStars - filledStars;
+      return Array(total).fill(0).map((_, i) => i + 1);
     }
   }
 }

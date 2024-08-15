@@ -1,17 +1,19 @@
-<div class="w-[149px] h-full bg-gray-800 text-white fixed top-0 left-0 flex flex-col">
+<div class="w-[220px] h-full bg-gray-800 text-white fixed top-0 left-0 flex flex-col">
   <div class="p-4 text-2xl font-semibold">
-    Sidebar
+    {{ baseRoute === '/admin' ? 'Admin' : 'Seller' }}
+  </div>
+  <div class="p-2">
+    <input
+      type="text"
+      placeholder="Search book... "
+      class="w-full p-2 rounded bg-gray-700 text-white"
+      (input)="onSearchChange($event)"
+    />
   </div>
   <nav class="flex-1 p-2">
     <ul>
-      <li class="my-2">
-        <a routerLink="/" class="block p-2 hover:bg-gray-700 rounded">Home</a>
-      </li>
-      <li class="my-2">
-        <a routerLink="/about" class="block p-2 hover:bg-gray-700 rounded">About</a>
-      </li>
-      <li class="my-2">
-        <a routerLink="/contact" class="block p-2 hover:bg-gray-700 rounded">Contact</a>
+      <li class="my-2" *ngFor="let link of filteredLinks">
+        <a [routerLink]="link.route" class="block p-2 hover:bg-gray-700 rounded">{{ link.name }}</a>
       </li>
     </ul>
   </nav>

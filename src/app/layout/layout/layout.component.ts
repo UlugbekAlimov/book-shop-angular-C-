@@ -21,12 +21,9 @@ export class LayoutComponent {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.showNavbar = !this.router.url.startsWith('/admin');
-      this.showSidebar = this.router.url.startsWith('/admin');
+      const url = this.router.url;
+      this.showNavbar = !url.startsWith('/admin') && !url.startsWith('/seller');
+      this.showSidebar = url.startsWith('/admin') || url.startsWith('/seller');
     });
-  }
-
-  toggleSidebar() {
-    this.showSidebar = !this.showSidebar;
   }
 }
